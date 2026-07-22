@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    
+    --brand-900: #0a1f3f;
+    --brand-700: #1e40af;
+    --brand-500: #3b82f6;
+    --brand-100: #dbeafe;
+
+    --critical: #ef4444;
+    --warning: #f97316;
+    --caution: #fbbf24;
+    --success: #10b981;
+    --info: #06b6d4;
+  }
+
+  .dark {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass-panel {
+    @apply bg-slate-900/60 backdrop-blur-md border border-slate-700/50 shadow-xl;
+  }
+
+  .glass-panel-hover {
+    @apply transition-all duration-300 hover:bg-slate-800/70 hover:border-slate-600/50 hover:shadow-2xl hover:-translate-y-1;
+  }
+}
